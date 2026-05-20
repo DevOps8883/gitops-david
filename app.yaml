@@ -2,23 +2,24 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 
 metadata:
-    name: nginx-gitops
+  name: nginx-gitops
 
-      namespace: argocd
+  namespace: argocd
 
-      spec:
-          project: default
+spec:
+  project: default
 
-            source:
-                  repoURL: https://github.com/DevOps8883/gitops-david.git
-                      targetRevision: main
-                          path: manifests
+  source:
+    repoURL: https://github.com/DevOps8883/gitops-david.git
+    targetRevision: main
+    path: manifests
 
-                            destination:
-                                  server: https://kubernetes.default.svc
-                                      namespace: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
 
-                                        syncPolicy:
-                                              automated:
-                                                      prune: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
                                                             selfHeal: true
