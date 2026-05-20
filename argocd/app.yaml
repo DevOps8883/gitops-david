@@ -22,4 +22,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
+<<<<<<< HEAD
                                              
+=======
+                                             
+>>>>>>> c912f888d99f1a027a7e206fd1866d43fa574f5f
